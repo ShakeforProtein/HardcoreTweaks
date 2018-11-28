@@ -1,0 +1,7 @@
+name: HardcoreTweaks
+version: ${project.version}
+main: me.shakeforprotein.hardcoretweaks.HardcoreTweaks
+prefix: [HardcoreTweaks]
+authors: [ShakeforProtein]
+description: Various difficulty tweaks for hardcore mode
+website: http://play.treebomc.com

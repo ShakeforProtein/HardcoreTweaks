@@ -1,0 +1,20 @@
+version: $.[project.version]
+
+enablerollbackOnDeath: 'true'
+rollbackHowFar: '26w'
+
+cooldownTicks:
+  0: 100
+  1: 200
+  2: 400
+  3: 800
+  4: 1200
+  5: 2400
+
+players:
+
+maxCooldownLevel: 5
+
+cooldownCooldown: 6000
+
+enableRespawnDelay: 'true'
