@@ -24,7 +24,7 @@ public class PlayerListener implements Listener {
     //Declare Variables
     String command;
 
-    
+
     @EventHandler
     public void onPlayerLeaveBed(PlayerBedEnterEvent e) {
     e.getPlayer().sendMessage(ChatColor.RED + "SLEEP IS FOR THE WEAK");
@@ -60,7 +60,7 @@ public class PlayerListener implements Listener {
             pl.getConfig().set("players." + p.getName() +".deaths", deaths);
             int cdCd = (int) pl.getConfig().get("cooldownCooldown");
             String rollback = pl.getConfig().get("rollbackHowFar").toString();
-            if (p.getWorld().getName().contains("world")) {
+            if (p.getWorld().getName().contains("Hardcore")) {
 
 
                 cdLvl = pl.getConfig().getInt("players." + p.getName() + ".cooldownLevel");
@@ -74,11 +74,11 @@ public class PlayerListener implements Listener {
                 delayInSeconds = cdDelay / 20;
 
                 ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
-                command = "co rollback u:" + p.getName() + "r:#Harcore t:" + rollback;
+                command = "co rollback u:" + p.getName() + "r:#Hardcore t:" + rollback;
                 Bukkit.dispatchCommand(console, command);
-                command = "co rollback u:" + p.getName() + "r:#Harcore_nether t:" + rollback;
+                command = "co rollback u:" + p.getName() + "r:#Hardcore_nether t:" + rollback;
                 Bukkit.dispatchCommand(console, command);
-                command = "co rollback u:" + p.getName() + "r:#Harcore t:" + rollback;
+                command = "co rollback u:" + p.getName() + "r:#Hardcore_the_end t:" + rollback;
                 Bukkit.dispatchCommand(console, command);
 
                 p.sendMessage("You must now wait " + delayInSeconds + " seconds to respawn");
@@ -87,7 +87,8 @@ public class PlayerListener implements Listener {
                 p.setHealth(20);
                 p.setGameMode(GameMode.SPECTATOR);
                 p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 200000, 1), true);
-                Bukkit.dispatchCommand(p, "spawn");
+                //Removed initial call to spawn
+                // Bukkit.dispatchCommand(p, "spawn");
                 cooldownControl(p, 1);
 
                 // REMOVE ONE COOLDOWN LEVEL AFTER X TIME
@@ -109,8 +110,7 @@ public class PlayerListener implements Listener {
                         ClearEffects(p);
                         p.setSaturation(3);
                         p.setFoodLevel(3);
-                        Bukkit.dispatchCommand(console, "give "+ p.getName() + " minecraft:cookie 3");
-
+                        Bukkit.dispatchCommand(console, "minecraft:give "+ p.getName() + " minecraft:cookie 3");
                     }
 
                 }, cdDelay);
