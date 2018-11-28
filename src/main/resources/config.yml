@@ -18,3 +18,5 @@ maxCooldownLevel: 5
 cooldownCooldown: 6000
 
 enableRespawnDelay: 'true'
+
+debug: 'false'

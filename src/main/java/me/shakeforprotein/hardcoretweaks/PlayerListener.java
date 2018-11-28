@@ -74,12 +74,18 @@ public class PlayerListener implements Listener {
                 delayInSeconds = cdDelay / 20;
 
                 ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
-                command = "co rollback u:" + p.getName() + "r:#Hardcore t:" + rollback;
+                command = "co rollback u:" + p.getName() + " r:#global t:" + rollback;
+                if(pl.getConfig().getString("debug").equalsIgnoreCase("true")){
+                    p.sendMessage(command);
+                }
                 Bukkit.dispatchCommand(console, command);
-                command = "co rollback u:" + p.getName() + "r:#Hardcore_nether t:" + rollback;
+                command = "title " + p.getName() + " times 20 100 20";
                 Bukkit.dispatchCommand(console, command);
-                command = "co rollback u:" + p.getName() + "r:#Hardcore_the_end t:" + rollback;
+                command = "title "+ p.getName() + " subtitle {\"text\":\"Like a bitch\",\"underlined\":true,\"color\":\"red\"}";
                 Bukkit.dispatchCommand(console, command);
+                command = "title " + p.getName() + " title {\"text\":\"YOU DIED\",\"color\":\"dark_red\"}";
+                Bukkit.dispatchCommand(console, command);
+
 
                 p.sendMessage("You must now wait " + delayInSeconds + " seconds to respawn");
 
