@@ -7,6 +7,6 @@ description: Various difficulty tweaks for hardcore mode
 website: http://play.treebomc.com
 
 permissions:
-  stoneores.updatechecker:
+  hardcoretweaks.updatechecker:
     description: 'Issues update check when player logs in'
     default: op
