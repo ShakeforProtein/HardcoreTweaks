@@ -97,9 +97,7 @@ public class PlayerListener implements Listener {
 
                 ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
                 command = "co rollback u:" + p.getName() + " r:#global t:" + rollback;
-                if(pl.getConfig().getString("debug").equalsIgnoreCase("true")){
-                    p.sendMessage(command);
-                }
+
                 Bukkit.dispatchCommand(console, command);
                 command = "title " + p.getName() + " times 20 100 20";
                 Bukkit.dispatchCommand(console, command);
