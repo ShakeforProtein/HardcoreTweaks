@@ -5,3 +5,8 @@ prefix: [HardcoreTweaks]
 authors: [ShakeforProtein]
 description: Various difficulty tweaks for hardcore mode
 website: http://play.treebomc.com
+
+permissions:
+  stoneores.updateCheck:
+    description: 'Issues update check when player logs in'
+    default: op

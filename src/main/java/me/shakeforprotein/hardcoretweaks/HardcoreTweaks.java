@@ -7,6 +7,7 @@ import org.bukkit.potion.PotionEffect;
 public final class HardcoreTweaks extends JavaPlugin {
 
     private PlayerListener pL;
+    private UpdateChecker uc;
     public HardcoreTweaks(){}
 
     @Override
@@ -16,6 +17,8 @@ public final class HardcoreTweaks extends JavaPlugin {
         getConfig().options().copyDefaults(true);
         getConfig().set("version", this.getDescription().getVersion());
         saveConfig();
+        this.uc = new UpdateChecker(this);
+
 
         System.out.println("Hardcore Tweaks Loaded");
     }

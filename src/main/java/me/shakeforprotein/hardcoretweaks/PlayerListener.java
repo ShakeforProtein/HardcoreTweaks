@@ -16,9 +16,11 @@ import org.bukkit.potion.PotionEffectType;
 public class PlayerListener implements Listener {
 
     private HardcoreTweaks pl;
+    private UpdateChecker uc;
 
     public PlayerListener(HardcoreTweaks main) {
         pl = main;
+        this.uc = new UpdateChecker(pl);
     }
 
     //Declare Variables
@@ -36,6 +38,9 @@ public class PlayerListener implements Listener {
 
     @EventHandler
     public void onPlayerJoinEvent(PlayerJoinEvent e){
+        if (e.getPlayer().hasPermission(pl.getName() + ".updatecheck")) {
+            uc.getCheckDownloadURL(e.getPlayer());
+        }
         Player p = e.getPlayer();
         p.setSaturation(0);
         p.setFoodLevel(5);
@@ -92,6 +97,7 @@ public class PlayerListener implements Listener {
 
                 p.setHealth(20);
                 p.setGameMode(GameMode.SPECTATOR);
+
                 p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 200000, 1), true);
                 //Removed initial call to spawn
                 // Bukkit.dispatchCommand(p, "spawn");

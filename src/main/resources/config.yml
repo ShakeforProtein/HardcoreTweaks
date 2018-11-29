@@ -1,4 +1,9 @@
-version: $.[project.version]
+version:
+yamlCreatedInVersion: $[project.version]
+apiLink: 'https://api.github.com/repos/TreeboMC/HardcoreTweaks/releases/latest'
+releasePage: 'https://github.com/repos/TreeboMC/HardcoreTweaks/releases/latest'
+checkUpdates: 'true'
+
 
 enablerollbackOnDeath: 'true'
 rollbackHowFar: '26w'
