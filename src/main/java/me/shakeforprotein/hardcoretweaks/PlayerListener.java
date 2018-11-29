@@ -38,7 +38,7 @@ public class PlayerListener implements Listener {
 
     @EventHandler
     public void onPlayerJoinEvent(PlayerJoinEvent e){
-        if (e.getPlayer().hasPermission(pl.getName() + ".updatechecker")) {
+        if (e.getPlayer().hasPermission(uc.requiredPermission)) {
             uc.getCheckDownloadURL(e.getPlayer());
         }
         Player p = e.getPlayer();
