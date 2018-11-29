@@ -16,7 +16,7 @@ public class UpdateChecker {
 
     //These two need to be changed for different plugins
     private HardcoreTweaks pl;
-    public String requiredPermission = pl.getName().toLowerCase() +".updatechecker";
+    public String requiredPermission = "hardcoretweaks.updatechecker";
 
     public UpdateChecker(HardcoreTweaks pl) {
         this.pl = pl;
